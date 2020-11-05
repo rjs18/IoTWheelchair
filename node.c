@@ -42,7 +42,7 @@ void loop()
         ThingSpeak.writeField(counterChannelNumber , 1 , status_ , myCounterWriteAPIKey);
     }
     else{
-      Serial.println("No fall detected");
+      Serial.println("Status : Normal");
       ThingSpeak.writeField(counterChannelNumber , 1 , 0 , myCounterWriteAPIKey);
     }
     delay(50);

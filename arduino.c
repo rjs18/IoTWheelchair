@@ -12,7 +12,7 @@ const int buzzer = 3, button = 4;
 float previousTime, currentTime, elapsedTime;
 float accAngleX, accAngleY, gyroAngleX, gyroAngleY;
 float gyroAngleX_deg, gyroAngleY_deg;
-float gyroX, gyroY,gyroZ,accX,accY,accZ;
+float gyroX, gyroY, gyroZ, accX, accY, accZ;
 float roll, pitch;
 bool fallen = false;
 
@@ -86,7 +86,7 @@ void loop() {
 
   if(roll > 50.0 || pitch > 50.0){
     //Serial.println("Loop Entered");
-    //fallen = true;
+    fallen = true;
 	lcd.print("FALL DETECTED!");
     while(snooze == HIGH){
       digitalWrite(buzzer, HIGH);
@@ -98,7 +98,7 @@ void loop() {
   }
 //  else{
     digitalWrite(buzzer, LOW);
-	lcd.print("Wheel chair is steady.");
+	lcd.print("Status : Normal");
 //    s.write(0);
 //  }
   delay(100);
